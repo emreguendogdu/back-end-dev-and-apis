@@ -12,6 +12,7 @@ app.get("/", function (req, res) {
   res.sendFile(process.cwd() + "/views/index.html");
 });
 
+// upfile = upload inputfield's name attribute value
 app.post("/api/fileanalyse", multer().single("upfile"), (req, res) => {
   res.json({
     name: req.file.originalname,
